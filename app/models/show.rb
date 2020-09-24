@@ -5,6 +5,8 @@ class Show < ActiveRecord::Base
     end
     def self.most_popular_show
         self.where("rating = ?", self.highest_rating)
+        # the hash values corresponding to the shows is wrong. I'm unsure if
+        # this is the same for everyone but I am unable to legitimitely pass the tests.
     end
     def self.lowest_rating
         self.minimum(:rating)
